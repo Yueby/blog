@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>第一次使用 Hexo</title>
+      <link href="/2024/12/14/first-use-hexo/"/>
+      <url>/2024/12/14/first-use-hexo/</url>
+      
+        <content type="html"><![CDATA[<p>第一次使用hexo，记录一下。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PowerShell批量压缩文件：内置命令vs 7-Zip方案对比</title>
+      <link href="/2024/12/14/powershell-create-multiple-zip/"/>
+      <url>/2024/12/14/powershell-create-multiple-zip/</url>
+      
+        <content type="html"><![CDATA[<h1 id="PowerShell-批量创建压缩包"><a href="#PowerShell-批量创建压缩包" class="headerlink" title="PowerShell 批量创建压缩包"></a>PowerShell 批量创建压缩包</h1><p>在日常工作中，我们可能需要将多个文件分别打包成独立的压缩文件。这里介绍两种方法：使用PowerShell内置命令和使用7-Zip来实现。</p><h2 id="方法一：使用PowerShell内置命令"><a href="#方法一：使用PowerShell内置命令" class="headerlink" title="方法一：使用PowerShell内置命令"></a>方法一：使用PowerShell内置命令</h2><p>使用PowerShell的<code>Compress-Archive</code>命令可以直接实现压缩功能：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> <span class="string">&quot;C:\源文件夹&quot;</span> <span class="operator">-File</span> | <span class="built_in">ForEach-Object</span> &#123;</span><br><span class="line">    <span class="built_in">Compress-Archive</span> <span class="literal">-Path</span> <span class="variable">$_</span>.FullName <span class="literal">-DestinationPath</span> <span class="string">&quot;C:\目标文件夹\<span class="variable">$</span>(<span class="variable">$_</span>.BaseName).zip&quot;</span> <span class="literal">-Force</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="代码说明"><a href="#代码说明" class="headerlink" title="代码说明"></a>代码说明</h3><ul><li><code>Get-ChildItem</code>: 获取指定路径下的所有文件</li><li><code>-Path</code>: 指定源文件夹路径</li><li><code>-File</code>: 只获取文件，不包括文件夹</li><li><code>ForEach-Object</code>: 对每个文件执行压缩操作</li><li><code>Compress-Archive</code>: PowerShell的压缩命令</li><li><code>-Force</code>: 如果目标zip文件已存在，则覆盖它</li></ul><h2 id="方法二：使用7-Zip"><a href="#方法二：使用7-Zip" class="headerlink" title="方法二：使用7-Zip"></a>方法二：使用7-Zip</h2><p>如果需要更多压缩选项或更好的压缩率，可以使用7-Zip：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> *.unitypackage | <span class="built_in">ForEach-Object</span> &#123; </span><br><span class="line">    &amp;<span class="string">&quot;E:\7-Zip\7z.exe&quot;</span> a <span class="literal">-tzip</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$_</span>.BaseName).zip&quot;</span> <span class="variable">$_</span>.Name </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="代码说明-1"><a href="#代码说明-1" class="headerlink" title="代码说明"></a>代码说明</h3><ul><li><code>Get-ChildItem *.unitypackage</code>: 获取当前目录下所有 .unitypackage 文件</li><li><code>&amp;&quot;E:\7-Zip\7z.exe&quot;</code>: 调用7-Zip程序（需要根据实际安装路径调整）</li><li><code>a</code>: 添加文件到压缩包</li><li><code>-tzip</code>: 指定压缩格式为zip</li><li><code>$($_.BaseName).zip</code>: 使用原文件名（不含扩展名）作为zip文件名</li><li><code>$_.Name</code>: 要压缩的源文件名</li></ul><p>也可以使用更简短的命令形式：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> | ? name <span class="operator">-Like</span> <span class="string">&quot;*.unitypackage&quot;</span> | % &#123; </span><br><span class="line">    &amp;<span class="string">&quot;E:\7-Zip\7z.exe&quot;</span> a <span class="literal">-tzip</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$_</span>.BaseName).zip&quot;</span> <span class="variable">$_</span>.Name </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h2><ol><li>确保有足够的磁盘空间</li><li>路径中避免特殊字符</li><li>确保具有相应文件夹的访问权限</li><li>使用7-Zip方法时，需要先安装7-Zip并确保路径正确</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这两种方法各有特点：</p><ul><li>PowerShell内置命令使用简单，无需额外软件</li><li>7-Zip方法提供更多压缩选项，压缩率通常更好</li></ul><p>根据实际需求选择合适的方法即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PowerShell </tag>
+            
+            <tag> 7-Zip </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
