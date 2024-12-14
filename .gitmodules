@@ -1,3 +1,6 @@
 [submodule "thems/cactus"]
 	path = thems/cactus
 	url = https://github.com/Yueby/hexo-theme-cactus.git
+[submodule "themes/cactus"]
+	path = themes/cactus
+	url = https://github.com/Yueby/hexo-theme-cactus.git
