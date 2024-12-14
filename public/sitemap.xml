@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.yueby.sbs/google7641bacf2e5278e9</loc>
+    <loc>https://blog.yueby.sbs/2024/12/14/first-use-hexo/</loc>
     
     <lastmod>2024-12-14</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://blog.yueby.sbs/2024/12/14/first-use-hexo/</loc>
+    <loc>https://blog.yueby.sbs/2024/12/15/powershell-rename-files/</loc>
     
     <lastmod>2024-12-14</lastmod>
     
@@ -64,15 +64,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://blog.yueby.sbs/data/projects.json</loc>
-    
-    <lastmod>2024-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://blog.yueby.sbs/</loc>
@@ -83,20 +74,6 @@
 
   
   <url>
-    <loc>https://blog.yueby.sbs/tags/Hexo/</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yueby.sbs/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.yueby.sbs/tags/PowerShell/</loc>
     <lastmod>2024-12-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -105,6 +82,20 @@
   
   <url>
     <loc>https://blog.yueby.sbs/tags/7-Zip/</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yueby.sbs/tags/Hexo/</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yueby.sbs/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

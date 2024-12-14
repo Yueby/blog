@@ -1,0 +1,22 @@
+[
+   {
+      "name": "YuebyTools-Core",
+      "url": "https://github.com/Yueby/YuebyTools-Core",
+      "desc": "YuebyTools的基类库，用于提供一些基础功能"
+   },
+   {
+      "name": "YuebyTools-AvatarTools",
+      "url": "https://github.com/Yueby/YuebyTools-AvatarTools",
+      "desc": "VRChat Avatar 工具库，用于制作VRChat Avatar"
+   },
+   {
+      "name": "YuebyTools-EditorExtender",
+      "url": "https://github.com/Yueby/YuebyTools-EditorExtender",
+      "desc": "Unity Editor 扩展库，用于扩展Unity Editor的功能"
+   },
+   {
+      "name": "YuebyTools-PackageImporter",
+      "url": "https://github.com/Yueby/YuebyTools-PackageImporter",
+      "desc": "UPM包管理器，支持导入本地包和UPM包"
+   }
+]
